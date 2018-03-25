@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">KISAN</string>
+    <string name="slogan">THE CURSE HEALING</string>
+    <string name="apptitle">KISAN</string>
+    <string name="signin">SIGN IN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="title_activity_main2">KISAN</string>
+    <string name="title_activity_kisan">Kisan</string>
+    <string name="title_activity_details">Details</string>
+    <string name="title_activity_status">Status</string>
+    <string name="title_activity_aboutus">Aboutus</string>
+
+
+</resources>

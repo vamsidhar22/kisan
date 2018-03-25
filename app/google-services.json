@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "930832494095",
+    "firebase_url": "https://kisan-c15b3.firebaseio.com",
+    "project_id": "kisan-c15b3",
+    "storage_bucket": "kisan-c15b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930832494095:android:9286ecdb01955a0a",
+        "android_client_info": {
+          "package_name": "com.example.vamsidharreddy.kisan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930832494095-bgl1f9167rrlrnf415h2e336t28r5hh3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vamsidharreddy.kisan",
+            "certificate_hash": "29dff0d9d4309b8eb367e53a0761058ccbe8e988"
+          }
+        },
+        {
+          "client_id": "930832494095-0fstpidfkgopu41fljhf5ohj3tsk6r3f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbI0b4-VNnlKKA2xMQljK1lFcOObi_Tj4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930832494095-0fstpidfkgopu41fljhf5ohj3tsk6r3f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
