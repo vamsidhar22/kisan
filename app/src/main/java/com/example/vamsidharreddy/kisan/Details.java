@@ -9,7 +9,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+//import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -32,16 +32,16 @@ import java.io.IOException;
 
 public class Details extends AppCompatActivity {
     // Folder path for Firebase Storage.
-    String Storage_Path = "All_Image_Uploads/";
+   public String Storage_Path = "All_Image_Uploads/";
 
     // Root Database Name for Firebase Database.
-    String Database_Path = "All_Image_Uploads_Database";
+    public static final String Database_Path = "All_Image_Uploads_Database";
 
     // Creating button.
     Button ChooseButton, UploadButton;
 
     // Creating EditText.
-    EditText cropdetails,symptoms,soiltype,town_village,dno,post,mandal,district,state,pincode ;
+    EditText cropdetails,symptoms,soiltype,town_village,dno,post,mandal,district,state,pincode,med,meduse,prevent,id ;
 
     // Creating ImageView.
     ImageView SelectImage;
@@ -85,6 +85,10 @@ public class Details extends AppCompatActivity {
         district = (EditText)findViewById(R.id.ImageNameEditText7);
         state = (EditText)findViewById(R.id.ImageNameEditText8);
         pincode = (EditText)findViewById(R.id.ImageNameEditText9);
+        med = (EditText)findViewById(R.id.ImageNameEditText10);
+        meduse = (EditText)findViewById(R.id.ImageNameEditText11);
+        prevent = (EditText)findViewById(R.id.ImageNameEditText12);
+        id=(EditText)findViewById(R.id.ImageNameEditText13);
 
         // Assign ID'S to image view.
         SelectImage = (ImageView)findViewById(R.id.ShowImageView);
@@ -124,8 +128,14 @@ public class Details extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
+                sharingIntent.setType("text/plain");
+                String shareBody = "Here is the share content body";
+                sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Subject Here");
+                sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
+                startActivity(Intent.createChooser(sharingIntent, "Share via"));
+               // Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
             }
         });
     }
@@ -200,7 +210,10 @@ public class Details extends AppCompatActivity {
                             String TempDistrict = district.getText().toString().trim();
                             String TempState = state.getText().toString().trim();
                             String TempPincode= pincode.getText().toString().trim();
-
+                            String Tempmed= med.getText().toString().trim();
+                            String Tempmeduse= meduse.getText().toString().trim();
+                            String TempPrevent= prevent.getText().toString().trim();
+                            String Tempid= id.getText().toString().trim();
                             // Hiding the progressDialog after done uploading.
                             progressDialog.dismiss();
 
@@ -208,7 +221,7 @@ public class Details extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Image Uploaded Successfully ", Toast.LENGTH_LONG).show();
 
                             @SuppressWarnings("VisibleForTests")
-                            ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempCrop, taskSnapshot.getDownloadUrl().toString(),TempSym,TempSoil,Temptown,TempDno,TempPost,TempMandal,TempDistrict,TempState,TempPincode);
+                            ImageUploadInfo imageUploadInfo = new ImageUploadInfo(TempCrop, taskSnapshot.getDownloadUrl().toString(),TempSym,TempSoil,Temptown,TempDno,TempPost,TempMandal,TempDistrict,TempState,TempPincode,Tempmed,Tempmeduse,TempPrevent,Tempid);
 
                             // Getting image upload ID.
                             String ImageUploadId = databaseReference.push().getKey();

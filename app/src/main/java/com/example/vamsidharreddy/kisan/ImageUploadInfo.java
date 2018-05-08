@@ -18,26 +18,31 @@ public class ImageUploadInfo {
     public String district;
     public String state;
     public String pincode;
+    public String medicine;
+    public String medicineuse;
+    public String prevention;
+    public String id;
 
     public ImageUploadInfo() {
 
     }
 
-    public ImageUploadInfo(String crop, String sym,String soil ,String url,String village,String doorno,String post,String mandal,String dist,String state,String pin ) {
-
-
-
-        this.imageURL= url;
-        this.symptoms=sym;
-        this.soiltype=soil;
-        this.cropdetails = crop;
-        this.town_village=village;
-        this.dno=doorno;
-        this.post=post;
-        this.mandal=mandal;
-        this.district=dist;
-        this.state=state;
-        this.pincode=pin;
+    public ImageUploadInfo(String cropdetails, String symptoms, String soiltype, String imageURL, String town_village, String dno, String post, String mandal, String district, String state, String pincode, String medicine, String medicineuse, String prevention, String id) {
+        this.cropdetails = cropdetails;
+        this.symptoms = symptoms;
+        this.soiltype = soiltype;
+        this.imageURL = imageURL;
+        this.town_village = town_village;
+        this.dno = dno;
+        this.post = post;
+        this.mandal = mandal;
+        this.district = district;
+        this.state = state;
+        this.pincode = pincode;
+        this.medicine = medicine;
+        this.medicineuse = medicineuse;
+        this.prevention = prevention;
+        this.id = id;
     }
 
     public String getCropdetails() {
@@ -78,5 +83,25 @@ public class ImageUploadInfo {
 
     public String getPincode() {
         return pincode;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public String getMedicine() {
+        return medicine;
+    }
+
+    public String getMedicineuse() {
+        return medicineuse;
+    }
+
+    public String getPrevention() {
+        return prevention;
+    }
+
+    public String getId() {
+        return id;
     }
 }
